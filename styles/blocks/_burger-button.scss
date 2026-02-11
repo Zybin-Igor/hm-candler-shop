@@ -1,0 +1,28 @@
+@use '../helpers/' as *;
+
+.burger-button {
+	@include square (rem(40));
+
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: rem(9) rem(5);
+	color: var(--color-braun);
+	background-color:var(--color-light-rose);
+	border: none;
+
+	@include hover {
+		color: var(--color-accent);
+	}
+
+	@include tablet-above {
+		@include hide;
+	}
+
+	&_line {
+		width: 100%;
+		height: rem(1);
+		background-color: currentColor;
+		transition-duration: var(--transition-duration);
+	}
+}

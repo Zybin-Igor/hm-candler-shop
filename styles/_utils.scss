@@ -1,0 +1,26 @@
+@use "helpers" as *;
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2); // - rem(20);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+// скрываем елемент при использовании данного свойства
+.visually-hidden {
+@include visually-hidden;
+}
+
+// скрываем елемент от 784 и менее
+.hidden-tablet {
+	@include tablet {
+		display: none !important;
+	}
+}
+
+//скрываем елемент от 784 и более
+.visible-tablet {
+	@include tablet-above {
+		display: none !important;
+	}
+}
