@@ -1,0 +1,53 @@
+@use "../helpers/" as *;
+
+.footer {
+  padding-top: rem(40);
+  padding-bottom: rem(35);
+
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(20);
+
+    @include laptop {
+      gap: rem(0);
+    }
+
+    @include tablet {
+      gap: rem(20);
+      flex-wrap: wrap;
+    }
+  }
+
+  &_contacts {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    align-items: start;
+
+    @include desktop-above {
+      width: rem(230);
+    }
+    @include tablet {
+      width: 100%;
+      align-items: center;
+      gap: rem(10);
+      a.footer_phone {
+        text-align: center;
+        width: 100%;
+        // display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &_soc1al {
+    display: flex;
+    gap: rem(15);
+    align-items: center;
+		justify-content: center;
+  }
+}
+
+

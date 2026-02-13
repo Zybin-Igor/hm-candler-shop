@@ -3,7 +3,7 @@
 .header {
 	&_body {
 		padding-block: rem(4);
-
+		margin-left: auto;
 		&-inner {
 			display: flex;
 			justify-content: space-between;
