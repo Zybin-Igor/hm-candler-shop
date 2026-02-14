@@ -12,15 +12,29 @@
 }
 
 // скрываем елемент от 784 и менее
-.hidden-tablet {
-	@include tablet {
+// .hidden-tablet {
+// 	@include tablet {
+// 		display: none !important;
+// 	}
+// }
+
+//скрываем елемент от 784 и более
+// .visible-tablet {
+// 	@include tablet-above {
+// 		display: none !important;
+// 	}
+// }
+
+// скрываем елемент от 480 и менее
+.hidden-mobile {
+	@include mobile {
 		display: none !important;
 	}
 }
 
-//скрываем елемент от 784 и более
+// скрываем елемент от 480 и более
 .visible-tablet {
-	@include tablet-above {
+	@include mobile-above {
 		display: none !important;
 	}
 }

@@ -1,36 +1,20 @@
-@use '../helpers/' as *;
-
+@use "../helpers/" as *;
 
 .phone {
-    display: flex;
-    align-items: center;
-    // gap: rem(8);
-    text-decoration: none;
-    color: var(--color-dark);
-    white-space: nowrap;
-    
-    // На десктопе - максимально справа
-    @include laptop-above {
-        margin-left: auto;     // Толкает вправо
-        margin-right: 0;       // Сбрасываем правый отступ
-        padding-right: 0;      // Убираем padding если был
+  display: flex;
+  align-items: center;
+  // gap: rem(8);
+  text-decoration: none;
+  color: var(--color-dark);
+  white-space: nowrap;
+
+  .logo_img {
+    @include laptop {
+      width: fluid(14, 14);
+      .phone_number {
+        font-size: rem(10);
+      }
     }
-    
-    // На планшетах - по центру
-    @include tablet {
-        margin-left: 0;
-        margin-right: 0;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
-    }
-    
-    // На мобилках - адаптируем
-    @include mobile {
-        // Если нужно скрыть текст номера
-        span:not(.icon) {
-            display: none;
-        }
-    }
+		
+  }
 }

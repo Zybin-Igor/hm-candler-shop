@@ -1,6 +1,7 @@
 @use "../helpers/" as *;
 
 .footer {
+	
   padding-top: rem(40);
   padding-bottom: rem(35);
 
@@ -8,18 +9,48 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: rem(20);
-
-    @include laptop {
-      gap: rem(0);
-    }
+    
 
     @include tablet {
-      gap: rem(20);
-      flex-wrap: wrap;
+       flex-wrap: wrap;
     }
+		@include mobile {
+			flex-direction: column;
+			gap:rem(50);
+			
+		}
   }
 
+	  .menu {
+			@include desktop-above {
+				margin-left: rem(30);
+			}
+    &_list {
+      display: flex;
+      align-items: center;
+      column-gap: rem(20);
+			
+			// @include tablet {
+			// 	column-gap: rem(20);
+			// }
+			&-item {
+		text-transform:uppercase;
+
+		@include tablet {
+		font-size: rem(10);
+		}
+		@include mobile {
+		font-size: rem(14);
+		}
+		}
+		@include mobile {
+				flex-direction: column;
+				row-gap: rem(22);
+				
+			}	
+    }
+			
+}
   &_contacts {
     display: flex;
     flex-direction: column;
@@ -33,13 +64,17 @@
       width: 100%;
       align-items: center;
       gap: rem(10);
-      a.footer_phone {
-        text-align: center;
-        width: 100%;
-        // display: flex;
-        justify-content: center;
-      }
+      
     }
+
+		@include mobile {
+			gap: rem(15);
+		}
+		.email {
+			@include tablet {
+				font-size: rem(10);
+			}
+		}
   }
 
   &_soc1al {
@@ -47,7 +82,20 @@
     gap: rem(15);
     align-items: center;
 		justify-content: center;
+
+		@include tablet {
+			row-gap: rem(8);
+		}
+		@include mobile {
+			row-gap: rem(15);
+		}
   }
+	.logo {
+		@include mobile {
+			display: flex;
+			column-gap:rem(50);
+		}
+	}
 }
 
 

@@ -80,7 +80,7 @@ a {
 }
 
 :focus-visible {
-		outline: rem(3) dashed var(--color-dashed);
+		outline: rem(1) dashed var(--color-dashed);
 		outline-offset: rem(4);
 		transition-duration: 0s !important;
 	}

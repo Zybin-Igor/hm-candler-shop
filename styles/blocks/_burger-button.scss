@@ -15,9 +15,9 @@
 		color: var(--color-accent);
 	}
 
-	@include tablet-above {
+	@include mobile-above {
 		@include hide;
-	}
+}
 
 	&_line {
 		width: 100%;

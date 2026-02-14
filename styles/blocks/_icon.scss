@@ -2,11 +2,16 @@
 
 .icon {
 	
-.phone-icon {
-	padding-block:rem(5);
-    fill: #BEA495 !important;;
-@include hover {
-	fill:green !important;;
-}
-}
+	.email {
+		@include laptop {
+			font-size: rem(10);
+		}
+	}
+// .phone-icon {
+// 	padding-block:rem(5);
+//     fill: #BEA495 !important;
+// @include hover {
+// 	fill:green !important;
+// }
+// }
 }
