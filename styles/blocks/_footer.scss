@@ -1,9 +1,26 @@
 @use "../helpers/" as *;
 
 .footer {
-	
-  padding-top: rem(40);
+	padding-top: rem(40);
   padding-bottom: rem(35);
+
+@include laptop {
+	.container {
+		max-width: rem(960);
+		
+	}
+}
+	@include tablet {
+		.container {
+		max-width: rem(640);
+		
+	}
+	}
+	@include mobile {
+		.container {
+		max-width: rem(460);
+	}
+	}
 
   &_inner {
     display: flex;
@@ -30,6 +47,11 @@
       align-items: center;
       column-gap: rem(20);
 			
+			&-link {
+			&.is-active {
+			color: var(--color-dashed);
+		 }
+		 }
 			// @include tablet {
 			// 	column-gap: rem(20);
 			// }
@@ -42,6 +64,7 @@
 		@include mobile {
 		font-size: rem(14);
 		}
+		 
 		}
 		@include mobile {
 				flex-direction: column;
@@ -58,7 +81,7 @@
     align-items: start;
 
     @include desktop-above {
-      width: rem(230);
+      width: rem(170);
     }
     @include tablet {
       width: 100%;
@@ -80,8 +103,7 @@
   &_soc1al {
     display: flex;
     gap: rem(15);
-    align-items: center;
-		justify-content: center;
+    
 
 		@include tablet {
 			row-gap: rem(8);
