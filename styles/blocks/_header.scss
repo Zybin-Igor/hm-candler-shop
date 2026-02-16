@@ -1,27 +1,24 @@
 @use "../helpers/" as *;
 
 .header {
+  @include laptop {
+    .container {
+      max-width: rem(960);
+    }
+  }
+  @include tablet {
+    .container {
+      max-width: rem(640);
+    }
+  }
+  @include mobile {
+    .container {
+      max-width: rem(460);
+    }
+  }
 
-@include laptop {
-	.container {
-		max-width: rem(960);
-		
-	}
-}
-	@include tablet {
-		.container {
-		max-width: rem(640);
-		
-	}
-	}
-	@include mobile {
-		.container {
-		max-width: rem(460);
-	}
-	}
-  
-&_inner {
-		padding-top: rem(4);
+  &_inner {
+    padding-top: rem(4);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,58 +31,55 @@
 
     @include mobile {
       position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 80%;
-      max-width: 400px;
-      background: var(--color-light-rose);
-      padding: rem(80) rem(40);
-      z-index: 1000;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-
-      &.is-active {
-        transform: translateX(0);
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: rem;
+      padding: 1rem;
+      transition-duration: var(--transition-duration);
+      background: var(--color-braun);
+    }
+    @include mobile {
+      &:not(.is-active) {
+        @include hide;
+        translate: 100%;
       }
     }
   }
 
-	  .menu {
-			@include desktop-above {
-				margin-left: rem(30);
-			}
+  .menu {
+    @include desktop-above {
+      margin-left: rem(30);
+    }
 
     &_list {
       display: flex;
       align-items: center;
       column-gap: rem(20);
-
+      outline: none !important;
+      border: none !important;
 			
-			&-link {
-			&.is-active {
-			color: var(--color-dashed);
-		 }
-		 }
-			
-			@include tablet {
-				column-gap: rem(9);
-			}
-// @include tablet {
-// 				column-gap: rem(5);
-// 			}
+      &-link {
+        &.is-active {
+          color: var(--color-dashed);
+        }
+      }
 
-			&-item {
-		text-transform:uppercase;
-@include laptop {
-	text-decoration: rem(14);
-}
-		@include tablet {
-			font-size: rem(10);
-		}
-		}
- }
-				
-}
-}
+      &-item {
+        text-transform: uppercase;
 
+        @include tablet {
+          font-size: rem(10);
+        }
+        @include mobile {
+          font-size: rem(14);
+        }
+      }
+      @include mobile {
+        flex-direction: column;
+        row-gap: rem(22);
+      }
+    }
+  }
+}

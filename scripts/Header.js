@@ -1,3 +1,6 @@
+
+
+
 class Header {
 
 	selectors = {
@@ -10,15 +13,28 @@ class Header {
 		isLock: 'is-lock',
 	}
 
+
+
 	constructor() {
 		this.rootElement = document.querySelector(this.selectors.root)
 		this.overlayElement = this.rootElement.querySelector(this.selectors.overlay)
 		this.burgerButtonElement = this.rootElement.querySelector(this.selectors.burgerButton)
-		
+		this.bindEvents()
 	}
+
+	onBurgerButtonClick = () => {
+		this.burgerButtonElement.classList.toggle(this.stateClasses.isActive)
+		this.overlayElement.classList.toggle(this.stateClasses.isActive)
+		document.documentElement.classList.toggle(this.stateClasses.isLock)
+	}
+
+	bindEvents() {
+		this.burgerButtonElement.addEventListener('click', this.onBurgerButtonClick)
+}
 
 }
 
-const menuBtn = document.querySelector('.header_burger-button');
+
+// const menuBtn = document.querySelector('.header_burger-button');
 
 export default Header
